@@ -1,6 +1,9 @@
 const CONFIG = {
   BASE_URL: 'https://fakestoreapi.com/',
-  //   BASE_IMAGE_URL: 'https://image.tmdb.org/t/p/w500/',
   DEFAULT_LANGUAGE: 'en-us',
+  CACHE_NAME: 'Item_Cache',
+  DATABASE_NAME: 'item-list-database',
+  DATABASE_VERSION: 1,
+  OBJECT_STORE_NAME: 'items',
 };
 export default CONFIG;

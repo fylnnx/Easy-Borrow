@@ -14,6 +14,10 @@
       margin-right: 10px; 
   }
 
+  .item_detail main {
+    flex: 1;
+  }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -86,6 +90,21 @@
   #joinUs aside h2 {
     margin-top: 20px;
   }
+
+  .item_detail {
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 40px;
+  }
+
+  .item_detail main,
+  .item_detail aside {
+    margin-top: 20px;
+  }
+
+  .item_detail main img {
+    max-width: 100%;
+  }
 }
 
 } 
@@ -114,11 +133,13 @@
   }
 
   .nav__list {
+    margin-top: 20px;
     flex-direction: column;
     gap: 10px;
   }
 
   .nav__item {
+    margin-top: 5px;
     display: list-item;
     border-bottom: 1px solid #e0e0e0;
     width: 100%;
@@ -136,10 +157,6 @@
     transition: right 0.3s;
   }
   .login-button {
-    margin-left: 150px;
-    margin-top: 20px;
-    max-width: 44px;
-    max-height: 44px;
     text-align: center;
     display: block; 
   }

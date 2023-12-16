@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import FakeStoreSource from '../../data/fakestore-source';
 import { createItemCatalogue } from '../templates/template_creator';
 
@@ -16,14 +17,19 @@ const PagePinjam = {
   async afterRender() {
     const items = await FakeStoreSource.ItemList();
     console.log(items);
-    const itemContainer = document.querySelector('#items');
+    const itemsContainer = document.querySelector('#items');
+
     items.forEach((item) => {
-      itemContainer.innerHTML += createItemCatalogue(item);
-    //   itemContainer.addEventListener('click', () => {
-    //     window.location.href = `#/detail/${item.id}`;
-    //   });
+      const itemElement = createItemCatalogue(item);
+      itemsContainer.insertAdjacentHTML('beforeend', itemElement);
+
+      const newItemElement = itemsContainer.lastElementChild;
+      newItemElement.addEventListener('click', () => {
+        window.location.href = `#/detail/${item.id}`;
+      });
     });
   },
+
 };
 
 export default PagePinjam;

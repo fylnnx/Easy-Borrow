@@ -12,13 +12,41 @@ const createItemCatalogue = (item) => `
 `;
 // eslint-disable-next-line no-unused-vars
 const createDetailItem = (item) => `
-    <div class ="item_detail">
-        <div class="item_detail_box">
-        <main> </main>
-        <aside> </aside>
-        </div>
+<div class ="item_detail_box">
+    <div class="item_detail">
+        <main>
+            <img src="${item.image}" alt="Gambar ${item.title}">
+        </main>
+        <aside> 
+            <div class ="detail_title">${item.title}</div>
+            <div class ="detail_desc"> 
+                ${item.description}
+            </div>
+            <div class="share-button">
+                <i class="fas fa-share"></i>
+            </div>
+            <div class="like-button"></div>
+            <div class="pinjam-button"> <a>Pinjam Barang</a> </div>
+        </aside>
     </div>
-
+</div>
 `;
 
-export { createItemCatalogue, createDetailItem };
+const createLikeButtonTemplate = () => `
+  <button aria-label="like this item" id="likeButton" class="like">
+     <i class="fa fa-heart-o" aria-hidden="true"></i>
+  </button>
+`;
+
+const createLikedButtonTemplate = () => `
+  <button aria-label="unlike this item" id="likeButton" class="like">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </button>
+`;
+
+export {
+  createItemCatalogue,
+  createDetailItem,
+  createLikeButtonTemplate,
+  createLikedButtonTemplate,
+};
